@@ -7,6 +7,14 @@ documentation before upgrading to a new release.
 
 Released closed milestones can be found on [GitHub](https://github.com/Icinga/icinga-powershell-plugins/milestones?state=closed).
 
+## 1.9.0 (2022-05-03)
+
+[Issue and PRs](https://github.com/Icinga/icinga-powershell-plugins/milestone/12?closed=1)
+
+## Enhancements
+
+* [#276](https://github.com/Icinga/icinga-powershell-plugins/issues/276) Extends `Invoke-IcingaCheckUpdates` for allowing to check if there is a pending reboot on the system remaining to finalize Windows updates
+
 ## 1.8.0 (2022-02-08)
 
 [Issue and PRs](https://github.com/Icinga/icinga-powershell-plugins/milestone/11?closed=1)
