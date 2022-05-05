@@ -7,6 +7,14 @@ documentation before upgrading to a new release.
 
 Released closed milestones can be found on [GitHub](https://github.com/Icinga/icinga-powershell-plugins/milestones?state=closed).
 
+## 1.10.0 (2022-08-09)
+
+[Issue and PRs](https://github.com/Icinga/icinga-powershell-plugins/milestone/13?closed=1)
+
+### Enhancements
+
+* [#300](https://github.com/Icinga/icinga-powershell-plugins/pull/300) Adds a new flag `-ConnectionErrAsCrit` to `Invoke-IcingaCheckHTTPStatus`, allowing to change the `UNKNOWN` result in case a connection to the website is not possible to `CRITICAL`
+
 ## 1.9.0 (2022-05-03)
 
 [Issue and PRs](https://github.com/Icinga/icinga-powershell-plugins/milestone/12?closed=1)
