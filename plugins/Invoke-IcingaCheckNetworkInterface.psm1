@@ -182,7 +182,8 @@ function Invoke-IcingaCheckNetworkInterface()
         [switch]$IncludeHidden        = $FALSE,
         [switch]$NoPerfData,
         [ValidateSet(0, 1, 2, 3)]
-        $Verbosity                    = 0
+        $Verbosity                    = 0,
+        [switch]$UseInterfaceName     = $FALSE
     );
 
     $NetworkDevices = Join-IcingaNetworkDeviceDataPerfCounter -NetworkDeviceCounter @(
@@ -229,7 +230,12 @@ function Invoke-IcingaCheckNetworkInterface()
         } else {
             # In case are simple interfaces, initialise them with other names
             $CheckPackageName = ([string]::Format('Interface {0}', $NetworkDeviceObject.Data.Name));
-            $InterfaceName    = ([string]::Format('eth {0}', $NetworkDeviceObject.Data.Index));
+            if ($UseInterfaceName) {
+              $InterfaceName    = ([string]::Format('{0}', $NetworkDeviceObject.Data.Name));
+            }
+            else {
+              $InterfaceName    = ([string]::Format('eth {0}', $NetworkDeviceObject.Data.Index));
+            }
         }
 
         # Create a new package we add all our performance metrics and interface data into
